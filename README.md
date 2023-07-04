@@ -6,8 +6,6 @@ Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VM`, `Compiler`, `Jack`, 
 
 ---
 
-## Certificate
-
 ## Highlighted Projects:
 
 ### 0x05
