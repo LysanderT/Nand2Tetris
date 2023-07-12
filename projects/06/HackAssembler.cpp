@@ -1,6 +1,7 @@
 #include <iostream>
 #include "HackAssembler.h"
 using namespace std;
+// g++ -Wall -O2 -std=gnu++17 HackAssembler.cpp -o HackAssembler -g
 
 HackAssembler::HackAssembler(string asmfile,string hackfile) {
     infile.open(asmfile);
