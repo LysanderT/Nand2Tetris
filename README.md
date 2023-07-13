@@ -1,6 +1,6 @@
 # Nand2Tetris
 
-An archive of projects implemented by my self in the course [Nand2Tetris](https://www.nand2tetris.org/).
+>An archive of projects implemented by my self in the course series [Nand2Tetris](https://www.nand2tetris.org/).
 
 Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VMTranslator`, `Compiler`, `Jack`, `OS`
 
@@ -10,19 +10,23 @@ Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VMTranslator`, `Compiler`
 
 ### 0x05
 
-[Hack Computer](./projects/05)
+[-> Hack Computer](./projects/05)
 
-A simple Computer with a CPU (ALU, registers), a Memory (RAM, SCREEN, KEYBOARD), and a ROM (instruction memory) that can run Hack Machine Language.
+> A simple Computer with a CPU (ALU, registers), a Memory (RAM, SCREEN, KEYBOARD), and a ROM (instruction memory) that can run Hack Machine Language.
 
-implemented using HDL. (score: 100/100)
+- The computer process a fetch-decode-execute cycle and can handle I/O operations.
+
+- implemented using HDL. (score: 100/100)
 
 ### 0x06 
 
-[HackAssembler](./projects/06)
+[-> HackAssembler](./projects/06)
 
-A simple Assembler for the Hack Computer that can translate Hack Assembly Language to Hack Machine Language.
+> A simple Assembler for the Hack Computer that can translate Hack Assembly Language to Hack Machine Language.
 
-implemented using C++. (score: 100/100)
+- The Hack Assembly Language supports symbolic labels, symbolic variables, symbolic arithmetic and logical operations, jump instructions, register assignment, and I/O operations.
+
+- implemented using C++. (score: 100/100)
 
 Compile command:
 
@@ -33,16 +37,18 @@ $ g++ -Wall -O2 -std=gnu++17 HackAssembler.cpp -o HackAssembler
 Usage:
 
 ```shell
-$ ./HackAssembler <input.asm>
+$ ./HackAssembler <fileName.asm>
 ```
 
 ### 0x07 & 0x08
 
 [VMTranslator](./projects/08)
 
-A simple VM Translator for the Hack Computer that can translate VM Language to Hack Assembly Language.
+> A VM-to-Hack Translator that can translate VM Language to Hack Assembly Language.
 
-implemented using C++. (score: 100/100)
+- The VM Language supports arithmetic and logical operations, memory access, program flow, function calling, and function return using stack frames.
+
+- implemented using C++. (score: 200/200)
 
 Compile command:
 
@@ -55,18 +61,31 @@ $ make clean
 Usage:
 
 ```shell
-$ ./VMTranslator <input.vm>
+$ ./VMTranslator <fileName.vm>
+# or
+$ ./VMTranslator <dirName>
+```
+
+## Debugging
+
+1. add `-g` option when compiling the code.
+2. use the following command to trigger the debugger:
+
+```shell
+# on x86_64
+$ gdb <executable file> <core dump file>
+# or on arm64 (mac m1)
+$ lldb <executable file> <core dump file>
 ```
 
 ## Testing
 
-use the .sh files in ./tools.
+use the .sh scripts in [tools](./tools) to test your code.
 
 ```shell
 # e.g.
 $ ./tools/HardwareSimulator.sh
 ```
-
 
 If your code is right, it will output "End of script - Comparison ended successfully".
 
