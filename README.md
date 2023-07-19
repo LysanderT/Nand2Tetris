@@ -66,6 +66,16 @@ $ ./VMTranslator <fileName.vm>
 $ ./VMTranslator <dirName>
 ```
 
+## 0x09
+
+A Game implemented using Jack Language.
+
+According to the warning of coursera honor code, I cannot publish the code here.
+
+However, there is a gif demo that can prove my work.
+
+[-> Whack a Mole!](./projects/09/WhackAMole/README.md)
+
 ## Debugging
 
 1. add `-g` option when compiling the code.

@@ -1,0 +1,510 @@
+function Game.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push constant 5
+call Array.new 1
+pop this 0
+push constant 0
+push this 0
+add
+push constant 1050
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 0
+add
+push constant 2564
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 0
+add
+push constant 5132
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 0
+add
+push constant 3607
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 0
+add
+push constant 7171
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+call Array.new 1
+pop this 1
+push constant 0
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+call Array.new 1
+pop this 2
+push constant 0
+push this 2
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 2
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 2
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 2
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 2
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 2
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 2
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 2
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 2
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 2
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push pointer 0
+return
+function Game.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Array.dispose 1
+pop temp 0
+push this 1
+call Array.dispose 1
+pop temp 0
+push this 2
+call Array.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Game.initial 2
+push argument 0
+pop pointer 0
+push constant 1
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 6
+lt
+not
+if-goto WHILE_END0
+push local 0
+push constant 1
+sub
+push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Mole.sink 1
+pop temp 0
+push local 0
+push local 1
+call Num.writeNum 2
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Game.run 5
+push argument 0
+pop pointer 0
+push constant 0
+pop local 1
+push constant 0
+pop local 2
+push constant 0
+pop local 3
+push constant 0
+pop local 4
+label WHILE_EXP0
+push local 1
+not
+not
+if-goto WHILE_END0
+push local 2
+push constant 20000
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 3
+push this 2
+add
+pop pointer 1
+push that 0
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.rise 1
+pop temp 0
+push local 3
+push this 2
+add
+pop pointer 1
+push that 0
+push this 1
+add
+push constant 0
+not
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+pop local 2
+push local 3
+push constant 1
+add
+pop local 3
+push local 3
+push constant 10
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 3
+label IF_FALSE1
+label WHILE_EXP1
+push local 4
+push constant 5
+lt
+not
+if-goto WHILE_END1
+push local 4
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push local 4
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.sink 1
+pop temp 0
+label IF_FALSE2
+push local 4
+push constant 1
+add
+pop local 4
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+pop local 4
+label IF_FALSE0
+push local 2
+push constant 1
+add
+pop local 2
+call Keyboard.keyPressed 0
+pop local 0
+push local 0
+push constant 81
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 0
+not
+pop local 1
+label IF_FALSE3
+push local 0
+push constant 49
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 0
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+not
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.strike 1
+pop temp 0
+push constant 0
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE5
+label IF_FALSE4
+push local 0
+push constant 50
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push constant 1
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+not
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 1
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.strike 1
+pop temp 0
+push constant 1
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE7
+label IF_FALSE6
+push local 0
+push constant 51
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 2
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+not
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 2
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.strike 1
+pop temp 0
+push constant 2
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE9
+label IF_FALSE8
+push local 0
+push constant 52
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push constant 3
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+not
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 3
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.strike 1
+pop temp 0
+push constant 3
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE11
+label IF_FALSE10
+push local 0
+push constant 53
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push constant 4
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+not
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push constant 4
+push this 0
+add
+pop pointer 1
+push that 0
+call Mole.strike 1
+pop temp 0
+push constant 4
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE13
+label IF_FALSE12
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return

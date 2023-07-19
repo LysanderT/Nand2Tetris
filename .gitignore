@@ -1,0 +1,19 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# source code of project 9 according to Honor Code
+Game.jack
+Main.jack
+Mole.jack
+Num.jack
+*.zip
