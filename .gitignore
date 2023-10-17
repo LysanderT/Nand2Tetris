@@ -17,3 +17,6 @@ Main.jack
 Mole.jack
 Num.jack
 *.zip
+*.ppt
+.gitignore
+materials/

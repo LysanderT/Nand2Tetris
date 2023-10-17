@@ -6,6 +6,19 @@ Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VMTranslator`, `Compiler`
 
 ---
 
+## Table of Contents
+
+- [Nand2Tetris](#nand2tetris)
+  - [Table of Contents](#table-of-contents)
+  - [Highlighted Projects:](#highlighted-projects)
+    - [0x05](#0x05)
+    - [0x06](#0x06)
+    - [0x07 \& 0x08](#0x07--0x08)
+    - [0x0A \& 0x0B](#0x0a--0x0b)
+  - [Debugging](#debugging)
+  - [Testing](#testing)
+  - [Certificate](#certificate)
+
 ## Highlighted Projects:
 
 ### 0x05
@@ -15,7 +28,7 @@ Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VMTranslator`, `Compiler`
 > A simple Computer with a CPU (ALU, registers), a Memory (RAM, SCREEN, KEYBOARD), and a ROM (instruction memory) that can run Hack Machine Language.
 
 - The computer process a fetch-decode-execute cycle and can handle I/O operations.
-
+- No pipelining, no cache, no virtual memory since this is not a architecture course.
 - implemented using HDL. (score: 100/100)
 
 ### 0x06 
@@ -25,7 +38,6 @@ Key words: `Nand2Tetris`, `HDL`, `Hack`, `Assembler`, `VMTranslator`, `Compiler`
 > A simple Assembler for the Hack Computer that can translate Hack Assembly Language to Hack Machine Language.
 
 - The Hack Assembly Language supports symbolic labels, symbolic variables, symbolic arithmetic and logical operations, jump instructions, register assignment, and I/O operations.
-
 - implemented using C++. (score: 100/100)
 
 Compile command:
@@ -42,19 +54,20 @@ $ ./HackAssembler <fileName.asm>
 
 ### 0x07 & 0x08
 
-[VMTranslator](./projects/08)
+[-> VMTranslator](./projects/08)
 
 > A VM-to-Hack Translator that can translate VM Language to Hack Assembly Language.
+>
+> Consist of a parser and a code generator.
 
 - The VM Language supports arithmetic and logical operations, memory access, program flow, function calling, and function return using stack frames.
-
 - implemented using C++. (score: 200/200)
 
 Compile command:
 
 ```shell
 $ make
-# can clean the .o files using:
+# can clean the .o files & the VMTranslator file using:
 $ make clean
 ```
 
@@ -66,15 +79,27 @@ $ ./VMTranslator <fileName.vm>
 $ ./VMTranslator <dirName>
 ```
 
-## 0x09
+### 0x0A & 0x0B
 
-A Game implemented using Jack Language.
+[-> JackCompiler](./projects/10)
 
-According to the warning of coursera honor code, I cannot publish the code here.
+> A Jack-to-VM Compiler that can translate Jack Language to VM Language.
 
-However, there is a gif demo that can prove my work.
+- Jack is a high level language that supports class (constructor, method, function), variable (static, field, argument, local), types (int, char, boolean, class), statements (let, if, while, do, return), expressions (term, unaryOp, binaryOp) and so on.
+- Implemented using C++. (score: 200/200)
 
-[-> Whack a Mole!](./projects/09/WhackAMole/README.md)
+```shell
+# structure 
+JackCompiler
+│
+├── JackAnalyzer
+│   │
+│   ├── Tokenizer
+│   │
+|   └── CompilationEngine
+|
+└── VMWriter
+```
 
 ## Debugging
 
